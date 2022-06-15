@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  ckb-node:
+    image: nervos/ckb:latest
+    user: root
+    restart: always
+    working_dir: /var/lib/ckb
+    entrypoint: /bin/docker-entrypoint.sh
+    command: run
+    ports:
+      - ${CKB_RPC_PORT:-8114}:8114
+      - ${CKB_P2P_PORT:-8115}:8115
+    environment:
+      CKB_CHAIN: $CKB_NETWORK
+      PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    volumes:
+      - ./ckb-node:/var/lib/ckb
+    networks:
+      - mynetwork
+
+  ckb-indexer:
+    image: nervos/ckb-indexer:latest
+    restart: always
+    user: root
+    entrypoint: /bin/ckb-indexer
+    command: ['-c', 'http://ckb-node:8114', '-s', '/data', '-l', '0.0.0.0:8116']
+    ports:
+      - ${CKB_INDEXER_PORT:-8116}:8116
+    environment:
+      RUST_LOG: info
+      PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    volumes:
+      - ./ckb-indexer:/data
+    depends_on:
+      - ckb-node
+    networks:
+      - mynetwork
