@@ -1,5 +1,18 @@
 version: '3'
 
+networks:
+  mynetwork:
+    ipam:
+      driver: default
+      config:
+        - subnet: 182.17.0.0/16
+          gateway: 182.17.0.1
+
+#networks:
+#  mynetwork:
+#    external:
+#      name: XXX_mynetwork
+
 services:
   ckb-node:
     image: nervos/ckb:latest
