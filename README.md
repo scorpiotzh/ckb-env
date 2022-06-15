@@ -22,3 +22,14 @@ curl --location --request POST 'http://127.0.0.1:8116' \
 }'
 
 ```
+
+```shell
+git clone https://github.com/scorpiotzh/ckb-env.git
+cd ckb-env
+cp docker-compose.example.yaml docker-compose.yaml
+vim docker-compose.yaml
+cp .env.example .env
+vim .env
+cp ckb-node/ckb.*.toml ckb-node/ckb.toml
+cp ckb-node/ckb-miner.*.toml ckb-node/ckb-miner.toml 
+```
