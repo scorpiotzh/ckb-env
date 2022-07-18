@@ -2,6 +2,10 @@
 
 ## Install & Run
 
+> ckb-node: https://github.com/nervosnetwork/ckb
+
+> ckb-indexer: https://github.com/nervosnetwork/ckb-indexer
+
 ### Prepare environment
 
 First of all, you need a ubuntu server environment(>= 18.4, 2C4G and 200GB SSD).
