@@ -4,7 +4,7 @@
 
 ### Prepare environment
 
-First of all, you need a ubuntu server environment(>= 18,2C4G and 200GB SSD).
+First of all, you need a ubuntu server environment(>= 18.4, 2C4G and 200GB SSD).
 
 Then you need docker(>= 20.10) and its compose plugin and they can be installed with following commands:
 
