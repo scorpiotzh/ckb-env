@@ -4,7 +4,7 @@
 
 ### Prepare environment
 
-First of all, you need a ubuntu server environment(>= 18).
+First of all, you need a ubuntu server environment(>= 18,2C4G and 200GB SSD).
 
 Then you need docker(>= 20.10) and its compose plugin and they can be installed with following commands:
 
@@ -27,6 +27,7 @@ Docker Compose version v2.5.0 # example ourput, maybe different on your machine
 
 * mainnet: use the file `ckb.mainnet.toml`,`ckb-miner.mainnet.toml`
 * testnet: use the file `ckb.testnet.toml`,`ckb-miner.testnet.toml`, and change `CKB_NETWORK=testnet` in file `.env`
+* chasing blocks for 24 hours to 48 hours
 
 ```shell
 git clone https://github.com/scorpiotzh/ckb-env.git
