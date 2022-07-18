@@ -27,7 +27,7 @@ Docker Compose version v2.5.0 # example ourput, maybe different on your machine
 
 * mainnet: use the file `ckb.mainnet.toml`,`ckb-miner.mainnet.toml`
 * testnet: use the file `ckb.testnet.toml`,`ckb-miner.testnet.toml`, and change `CKB_NETWORK=testnet` in file `.env`
-* chasing blocks for 24 hours to 48 hours
+* chasing blocks for 24 hours to 48 hours.
 
 ```shell
 git clone https://github.com/scorpiotzh/ckb-env.git
